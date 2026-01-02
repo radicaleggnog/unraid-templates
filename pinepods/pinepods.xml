@@ -1,0 +1,186 @@
+<?xml version="1.0" ?>
+<Container version="2">
+  <Name>PinePods</Name>
+  <Repository>madeofpendletonwool/pinepods:latest</Repository>
+  <Registry>https://hub.docker.com/r/madeofpendletonwool/pinepods</Registry>
+  <Network>bridge</Network>
+  <MyIP />
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://www.pinepods.online/docs/intro</Support>
+  <Project>https://www.pinepods.online</Project>
+  <Overview
+    >A Rust based podcast management system that manages podcasts with multi-user support and relies on a central database with clients to connect to it.</Overview>
+  <Category>MediaApp:Music MediaServer:Music Productivity: Tools:Utilities Other:</Category>
+  <WebUI>http://[IP]:[PORT:8040]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pinepods.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pinepods-icon.jpeg</Icon>
+  <Require>This template requires a separate MariaDB or PostgreSQL database and a separate Valkey or Redis instance.</Requires>
+  <Config Name="Web UI Port" Target="8040" Default="8040" Mode="tcp" Description="" Type="Port" Display="always-hide" Required="true" Mask="false" />
+  <Config
+        Name="Database - Type"
+        Target="DB_TYPE"
+        Default="postgresql|mariadb"
+        Mode="{3}"
+        Description="Type of database to use"
+        Type="Variable"
+        Display="always-hide"
+        Required="true"
+        Mask="false"
+    />
+  <Config
+        Name="Database - Host"
+        Target="DB_HOST"
+        Default=""
+        Mode="{3}"
+        Description="Hostname of database"
+        Type="Variable"
+        Display="always-hide"
+        Required="true"
+        Mask="false"
+    />
+  <Config
+        Name="Database - Port"
+        Target="DB_PORT"
+        Default=""
+        Mode="{3}"
+        Description="Port of database"
+        Type="Variable"
+        Display="always-hide"
+        Required="true"
+        Mask="false"
+    >5432</Config>
+  <Config
+        Name="Database - Name"
+        Target="DB_NAME"
+        Default=""
+        Mode="{3}"
+        Description="Name of database"
+        Type="Variable"
+        Display="always-hide"
+        Required="true"
+        Mask="false"
+    />
+  <Config
+        Name="Database - Username"
+        Target="DB_USER"
+        Default=""
+        Mode="{3}"
+        Description="Username for database"
+        Type="Variable"
+        Display="always-hide"
+        Required="true"
+        Mask="false"
+    />
+  <Config
+        Name="Database - Password"
+        Target="DB_PASSWORD"
+        Default=""
+        Mode="{3}"
+        Description="Password for database"
+        Type="Variable"
+        Display="always-hide"
+        Required="true"
+        Mask="true"
+    />
+  <Config
+        Name="VALKEY_HOST"
+        Target="VALKEY_HOST"
+        Default=""
+        Mode=""
+        Description="Host/IP for the Valkey/Redis instance"
+        Type="Variable"
+        Display="always"
+        Required="true"
+        Mask="false"
+    />
+  <Config
+        Name="VALKEY_PORT"
+        Target="VALKEY_PORT"
+        Default=""
+        Mode=""
+        Description="Port for the Valkey/Redis instance"
+        Type="Variable"
+        Display="always"
+        Required="true"
+        Mask="false"
+    >6379</Config>
+  <Config
+        Name="HOSTNAME"
+        Target="HOSTNAME"
+        Default=""
+        Mode=""
+        Description="The url you hit the site at. Only used for sharing rss feeds"
+        Type="Variable"
+        Display="always"
+        Required="false"
+        Mask="false"
+    />
+  <Config
+        Name="Downloads Path"
+        Target="/opt/pinepods/downloads"
+        Default="/mnt/user/appdata/pinepods/downloads"
+        Mode="rw"
+        Description="Path to downloads folder"
+        Type="Path"
+        Display="advanced-hide"
+        Required="true"
+        Mask="false"
+    >/mnt/user/appdata/pinepods/downloads</Config>
+  <Config
+        Name="Search API URL"
+        Target="SEARCH_API_URL"
+        Default="https://search.pinepods.online/api/search"
+        Mode="{3}"
+        Description="URL of podcast search API"
+        Type="Variable"
+        Display="advanced-hide"
+        Required="true"
+        Mask="false"
+    >https://search.pinepods.online/api/search</Config>
+  <Config
+        Name="People API URL"
+        Target="PEOPLE_API_URL"
+        Default="https://people.pinepods.online"
+        Mode="{3}"
+        Description="URL of people API"
+        Type="Variable"
+        Display="advanced-hide"
+        Required="true"
+        Mask="false"
+    >https://people.pinepods.online</Config>
+  <Config
+        Name="Debug Mode"
+        Target="DEBUG"
+        Default="False|True"
+        Mode="{3}"
+        Description="Enable debug mode"
+        Type="Variable"
+        Display="advanced-hide"
+        Required="true"
+        Mask="false"
+    />
+  <Config
+        Name="Backups Path"
+        Target="/opt/pinepods/backups"
+        Default="/mnt/user/appdata/pinepods/backups"
+        Mode="rw"
+        Description="Path to backups folder"
+        Type="Path"
+        Display="advanced-hide"
+        Required="true"
+        Mask="false"
+    >/mnt/user/appdata/pinepods/backups</Config>
+  <Config
+        Name="TailScale Fallback State Directory"
+        Target="CA_TS_FALLBACK_DIR"
+        Default="/opt/pinepods/downloads"
+        Mode="{3}"
+        Description="Fallback container directory for tailscale state information - Added By Community Applications"
+        Type="Variable"
+        Display="advanced"
+        Required="{7}"
+        Mask="{8}"
+    >/opt/pinepods/downloads</Config>
+  <TailscaleStateDir />
+</Container>
