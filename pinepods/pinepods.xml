@@ -13,8 +13,8 @@
     >A Rust based podcast management system that manages podcasts with multi-user support and relies on a central database with clients to connect to it.</Overview>
   <Category>MediaApp:Music MediaServer:Music Productivity: Tools:Utilities Other:</Category>
   <WebUI>http://[IP]:[PORT:8040]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pinepods.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pinepods-icon.jpeg</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/radicaleggnog/unraid-templates/refs/heads/main/pinepods/pinepods.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/radicaleggnog/unraid-templates/refs/heads/main/pinepods/pinepods.png</Icon>
   <Require>This template requires a separate MariaDB or PostgreSQL database and a separate Valkey or Redis instance.</Requires>
   <Config Name="Web UI Port" Target="8040" Default="8040" Mode="tcp" Description="" Type="Port" Display="always-hide" Required="true" Mask="false" />
   <Config
