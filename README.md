@@ -1,2 +1,4 @@
 # unraid-templates
-Unraid configurations
+Unraid configurations. 
+
+This is where my unraid configurations live.
